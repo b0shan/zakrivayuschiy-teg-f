@@ -17,4 +17,352 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font, "Inter", sans-serif);
+  color: var(--text-color, #000000);
+  background-color: var(--page-background-color);
+  background-image: var(--page-background-image, none);
+  background-size: cover;
+  background-attachment: fixed;
+  padding-block-start: 100px;
+  font-variation-settings: 'wght' var(--main-font-weight); 
 }
+
+.header__card {
+  margin-block-end: 105px;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  text-transform: uppercase;
+  font-family: var(--accent-font, fantasy);
+}
+
+.header__title {
+  margin-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
+  margin-block-end: 20px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.header__theme-menu {
+  margin-block: 20px;
+} 
+
+.theme-menu__list {
+  display: grid;
+  gap: 10px;
+  padding-inline-start: 20px;
+}
+
+.theme-menu__button {
+  position: relative;
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  background: transparent;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  appearance: none;
+}
+
+.theme-menu__button:not(:disabled)::after {
+  content: "";
+  display: block;
+  background: currentColor;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  inline-size: 100%;
+  block-size: 2px;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+} 
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+.header__card {
+  margin-inline: auto;
+  background: var(--page-background-color);
+  max-inline-size: 696px;
+  border: 2px solid var(--text-color);
+} 
+
+.main__sector {
+  display: grid;
+  justify-items: center;
+  padding-block-end: 100px;
+  gap: 55px;
+}
+
+.card__list {
+  display: grid;
+  gap: 50px;
+}
+
+.card {
+  margin-inline: auto;
+  max-inline-size: 696px;
+  border: 2px solid var(--text-color, #000000);
+  background: var(--page-background-color, #ffffff);
+}
+
+.card__head {
+  border-block-end: 2px solid var(--text-color);
+  padding: 4px 10px;
+}
+
+.card__name{
+  font-size: 18px;
+  line-height: normal;
+  font-variation-settings: 'wght' var(--card-name-font-weight);
+}
+
+.card__image-section {
+  position: relative;
+} 
+
+.card__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+}
+
+  .card__image-label {
+  position: absolute;
+  z-index: 1;
+  font-family: var(--accent-font, fantasy);
+  font-size: 14px;
+  color: var(--text-color);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  line-height: normal; 
+  text-transform: uppercase; 
+  text-shadow: 0 0 1px var(--page-background-color);
+  inset-inline-end: 13px;
+  inset-block-start: 24px;
+} 
+
+.card__text {
+  display: grid;
+  border-block-start: 2px solid var(--text-color);
+  font-size: 18px;
+  padding-block: 30px 0px;
+  padding-inline: 25px;
+  gap: 25px;
+} 
+
+.card__button-section {
+  display: flex;
+  justify-content: end;
+  align-items: stretch;
+  gap: 5px;
+  padding-block: 29px 25px;
+  padding-inline: 24px;
+}
+
+.card__icon-button {
+  display: grid;
+  border: 2px solid transparent; 
+  padding: 0;
+  background: transparent;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  appearance: none; 
+} 
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--text-color);
+}
+
+.button {
+  position: relative;
+  z-index: 1;
+  border: 2px solid var(--text-color);
+  font-family: var(--accent-font, fantasy);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: inherit;
+  background: var(--page-background-color);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  appearance: none;
+}  
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text-color);
+} 
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--text-color);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.card__like-button {
+  block-size: 38px;
+  inline-size: 130px;
+}
+
+.button__memory {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+}  
+
+.button__text,
+.button__icon {
+  color: var(--button-text-color);
+  mix-blend-mode: difference; 
+}
+
+.button__icon {
+  block-size: 22px;
+  inline-size: 22px;
+}
+
+.like-icon {
+  block-size: 36px;
+  inline-size: 39px;
+} 
+
+.memory {
+  max-inline-size: 357px;
+  padding: 25px 30px;
+  border: 2px solid var(--text-color, #000000);
+  background: var(--page-background-color, #ffffff);
+  color: var(--text-color, #000000);
+  font-family: var(--accent-font, fantasy);
+  line-height: 1.5;
+  text-transform: uppercase;
+} 
+
+.memory[open] {
+  display: grid; 
+  gap: 30px;
+}
+
+.memory::backdrop {
+  background: #000000;
+  opacity: 0.75;
+}
+
+.memory__content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+}
+ 
+.memory__icon {
+  flex-shrink: 0;
+  inline-size: 40px;
+  block-size: 40px;
+}  
+
+.memory__button {
+  inline-size: 100%;
+  padding-block: 10px;
+}
+
+.filter-image1 {
+  filter: invert(100%);
+}
+
+.filter-image2 {
+  filter: hue-rotate(35deg) contrast(40%);
+}
+
+.filter-image3 {
+  filter: grayscale(50%);
+}
+
+.filter-image4 {
+  filter: hue-rotate(210deg) blur(2px);
+}
+
+.filter-image5 {
+  filter: brightness(80%);
+}
+
+.filter-image6 {
+  filter: hue-rotate(0.5turn) contrast(50%); 
+}
+
+.filter-image7 {
+  filter: contrast(120%) invert(100%);
+}
+
+.filter-image8 {
+  filter: saturate(150%);
+}
+
+@supports((text-stroke: 1px var(--page-background-color)) or (-webkit-text-stroke: 1px var(--page-background-color))) {
+
+  .card__image-label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--page-background-color);
+    text-stroke: 1px var(--page-background-color);
+  }
+}  
+
+@media (width <= 375px) {
+ 
+  .button__icon {
+    block-size: 28px;
+    inline-size: 28px;
+  }
+
+  .button__memory {
+    flex-direction: column;
+  }
+
+  .modal {
+    padding: 28px 34px 28px 40px;
+    max-inline-size: 340px;
+  }
+}
+
+
+
