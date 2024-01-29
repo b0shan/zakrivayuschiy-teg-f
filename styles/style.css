@@ -117,7 +117,7 @@
 
 .card {
   margin-inline: auto;
-  max-inline-size: 696px;
+  max-inline-size: 700px;
   border: 2px solid var(--text-color, #000000);
   background: var(--page-background-color, #ffffff);
 }
