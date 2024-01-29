@@ -24,11 +24,7 @@
   background-size: cover;
   background-attachment: fixed;
   padding-block-start: 100px;
-  font-variation-settings: 'wght' var(--main-font-weight); 
-}
-
-.header__card {
-  margin-block-end: 105px;
+  font-variation-settings: "wght" var(--main-font-weight);
 }
 
 .header {
@@ -36,6 +32,14 @@
   justify-items: center;
   text-transform: uppercase;
   font-family: var(--accent-font, fantasy);
+  background: var(--page-background-color);
+  border: 2px solid var(--text-color);
+}
+
+.header__card {
+  margin-block-end: 105px;
+  margin-inline: auto;
+  max-inline-size: 696px;
 }
 
 .header__title {
@@ -50,7 +54,7 @@
 
 .header__theme-menu {
   margin-block: 20px;
-} 
+}
 
 .theme-menu__list {
   display: grid;
@@ -87,7 +91,7 @@
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
-} 
+}
 
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
@@ -98,13 +102,6 @@
   cursor: default;
   pointer-events: none;
 }
-
-.header__card {
-  margin-inline: auto;
-  background: var(--page-background-color);
-  max-inline-size: 696px;
-  border: 2px solid var(--text-color);
-} 
 
 .main__sector {
   display: grid;
@@ -130,24 +127,25 @@
   padding: 4px 10px;
 }
 
-.card__name{
+.card__name {
   font-size: 18px;
   line-height: normal;
-  font-variation-settings: 'wght' var(--card-name-font-weight);
+  font-variation-settings: "wght" var(--card-name-font-weight);
 }
 
 .card__image-section {
   position: relative;
-} 
+}
 
 .card__image {
   display: block;
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
+  aspect-ratio: 1 / 1;
 }
 
-  .card__image-label {
+.card__image-label {
   position: absolute;
   z-index: 1;
   font-family: var(--accent-font, fantasy);
@@ -155,12 +153,12 @@
   color: var(--text-color);
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  line-height: normal; 
-  text-transform: uppercase; 
+  line-height: normal;
+  text-transform: uppercase;
   text-shadow: 0 0 1px var(--page-background-color);
   inset-inline-end: 13px;
   inset-block-start: 24px;
-} 
+}
 
 .card__text {
   display: grid;
@@ -169,7 +167,7 @@
   padding-block: 30px 0px;
   padding-inline: 25px;
   gap: 25px;
-} 
+}
 
 .card__button-section {
   display: flex;
@@ -182,13 +180,13 @@
 
 .card__icon-button {
   display: grid;
-  border: 2px solid transparent; 
+  border: 2px solid transparent;
   padding: 0;
   background: transparent;
   transition: border-color 0.3s ease;
   cursor: pointer;
-  appearance: none; 
-} 
+  appearance: none;
+}
 
 .card__icon-button:focus {
   outline: none;
@@ -210,7 +208,7 @@
   transition: box-shadow 0.3s ease;
   cursor: pointer;
   appearance: none;
-}  
+}
 
 .button:focus {
   outline: none;
@@ -218,7 +216,7 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px 0px 0px var(--text-color);
-} 
+}
 
 .button::before {
   content: "";
@@ -249,23 +247,24 @@
   align-items: center;
   gap: 10px;
   padding: 15px 20px;
-}  
+}
 
-.button__text,
-.button__icon {
+.button__text {
   color: var(--button-text-color);
-  mix-blend-mode: difference; 
+  mix-blend-mode: difference;
 }
 
 .button__icon {
   block-size: 22px;
   inline-size: 22px;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
 }
 
 .like-icon {
   block-size: 36px;
   inline-size: 39px;
-} 
+}
 
 .memory {
   max-inline-size: 357px;
@@ -276,16 +275,15 @@
   font-family: var(--accent-font, fantasy);
   line-height: 1.5;
   text-transform: uppercase;
-} 
+}
 
 .memory[open] {
-  display: grid; 
+  display: grid;
   gap: 30px;
 }
 
 .memory::backdrop {
-  background: #000000;
-  opacity: 0.75;
+  background: #00000075;
 }
 
 .memory__content {
@@ -294,12 +292,12 @@
   gap: 16px;
   font-size: 14px;
 }
- 
+
 .memory__icon {
   flex-shrink: 0;
   inline-size: 40px;
   block-size: 40px;
-}  
+}
 
 .memory__button {
   inline-size: 100%;
@@ -327,7 +325,7 @@
 }
 
 .filter-image6 {
-  filter: hue-rotate(0.5turn) contrast(50%); 
+  filter: hue-rotate(0.5turn) contrast(50%);
 }
 
 .filter-image7 {
@@ -338,17 +336,15 @@
   filter: saturate(150%);
 }
 
-@supports((text-stroke: 1px var(--page-background-color)) or (-webkit-text-stroke: 1px var(--page-background-color))) {
-
+@supports ((text-stroke: 1px var(--page-background-color)) or (-webkit-text-stroke: 1px var(--page-background-color))) {
   .card__image-label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--page-background-color);
     text-stroke: 1px var(--page-background-color);
   }
-}  
+}
 
 @media (width <= 375px) {
- 
   .button__icon {
     block-size: 28px;
     inline-size: 28px;
@@ -358,11 +354,8 @@
     flex-direction: column;
   }
 
-  .modal {
-    padding: 28px 34px 28px 40px;
-    max-inline-size: 340px;
+  .memory {
+    padding: 28px 40px;
+    max-inline-size: 340px; 
   }
 }
-
-
-
