@@ -337,6 +337,7 @@
 }
 
 @supports ((text-stroke: 1px var(--page-background-color)) or (-webkit-text-stroke: 1px var(--page-background-color))) {
+  
   .card__image-label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--page-background-color);
@@ -345,6 +346,7 @@
 }
 
 @media (width <= 375px) {
+  
   .button__icon {
     block-size: 28px;
     inline-size: 28px;
